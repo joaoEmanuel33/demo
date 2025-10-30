@@ -12,12 +12,12 @@ import jakarta.transaction.Transactional;
 @NoRepositoryBean
 public interface BaseRepository<T, ID> extends JpaRepository<T, ID> {
 
-    @Query("SELECT e FROM #{entityName} e WHERE e.ativo = true")
+    @Query("SELECT e FROM #{#entityName} e WHERE e.ativo = true")
     List<T> findAll();
 
     @Transactional
     @Modifying
-    @Query("UPDATE #{entityName} e SET e.ativo = false WHERE e.id = :id")
+    @Query("UPDATE #{#entityName} e SET e.ativo = FALSE, e.deletedAt = CURRENT_TIMESTAMP WHERE e.id = :id")
     void softDeleteById(ID id);
 
 }

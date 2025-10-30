@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class Ambiente extends BaseEntity {
     
+    @Column(nullable = false)
+    private String nome;
     
     @Column(nullable = false)
     private String descricao;
