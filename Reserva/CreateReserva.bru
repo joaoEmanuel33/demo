@@ -1,0 +1,24 @@
+meta {
+  name: CreateReserva
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/reservas
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nome": "Reserva ",
+    "dataInicio": "2025-09-24T16:00",
+    "dataFim": "2025-09-28T20:00"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
