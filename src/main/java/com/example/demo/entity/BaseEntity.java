@@ -26,7 +26,7 @@ public abstract class BaseEntity {
     @Column(nullable = false)
     private boolean ativo = true;
 
-    @Column(nullable = false)
+    @Column(updatable = false)
     @CreatedDate
     private LocalDateTime createdAt;
 
@@ -36,5 +36,7 @@ public abstract class BaseEntity {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
+
+
 
 }

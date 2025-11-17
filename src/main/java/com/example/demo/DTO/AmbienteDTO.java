@@ -24,5 +24,7 @@ public class AmbienteDTO {
     private String localizacao;
     @NotNull(message = "A capacidade do ambiente é obrigatória")
     private int capacidade;
+    @NotNull(message = "O status ativo do ambiente é obrigatório")
+    private boolean ativo;
 
 }

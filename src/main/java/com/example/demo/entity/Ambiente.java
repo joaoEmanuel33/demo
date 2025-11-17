@@ -28,4 +28,7 @@ public class Ambiente extends BaseEntity {
     @Column(nullable = false)
     private int capacidade = 1;
 
+    @Column(nullable = false)
+    private boolean ativo = true;
+
 }

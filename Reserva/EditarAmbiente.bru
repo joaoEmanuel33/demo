@@ -5,11 +5,21 @@ meta {
 }
 
 put {
-  url: http://localhost:8080/ambientes
-  body: none
+  url: http://localhost:8080/ambientes/1
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "nome": "sala de instrumentos de trabalho",
+    "descricao": "almoxarifado",
+    "localizacao": "Sala 200 Andar 100",
+    "capacidade": 10
+  }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }

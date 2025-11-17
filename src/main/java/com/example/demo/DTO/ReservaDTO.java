@@ -6,6 +6,7 @@ import com.example.demo.entity.Ambiente;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,9 @@ public class ReservaDTO {
  
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
+
+    @NotBlank(message = "O nome do usuário é obrigatório")
+    private String usuario;
 
     @NotBlank(message = "O nome da reserva é obrigatório")
     private String nome;
@@ -34,6 +38,11 @@ public class ReservaDTO {
     @NotNull(message = "O ambiente da reserva é obrigatório")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Ambiente ambiente;
+
+    @AssertTrue(message = "A data de início deve ser anterior à data de fim")
+    public boolean isMorango(){
+        return dataInicio.isBefore(dataFim);
+    }
 
 
 }

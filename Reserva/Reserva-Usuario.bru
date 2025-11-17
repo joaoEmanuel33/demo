@@ -1,0 +1,16 @@
+meta {
+  name: Reserva-Usuario
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/reservas/por-usuario/Kelly
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

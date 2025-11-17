@@ -18,8 +18,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 public class Reserva extends BaseEntity{
+
+    @Column(nullable = false)
+    private String usuario;
     
-   
     @Column(nullable = false)
     private String nome;
 
