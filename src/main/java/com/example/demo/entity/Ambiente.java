@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -31,4 +33,11 @@ public class Ambiente extends BaseEntity {
     @Column(nullable = false)
     private boolean ativo = true;
 
-}
+    private Recurso recursos;
+
+    
+    }
+    
+
+    
+

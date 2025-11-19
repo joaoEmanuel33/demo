@@ -17,4 +17,6 @@ public interface AmbienteRepository extends BaseRepository<Ambiente, Long>{
     """)
     boolean temReservaFutura(Long id); 
 
+     
+
 }

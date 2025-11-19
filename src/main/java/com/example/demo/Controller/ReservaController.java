@@ -41,4 +41,5 @@ public class ReservaController extends BaseController<ReservaDTO> {
   public List<ReservaDTO> reservaCalendarioSemanal(){
      return service.calendarioSemanal();
   }
+  
 }
